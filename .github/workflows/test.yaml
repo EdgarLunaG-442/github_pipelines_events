@@ -11,8 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      - name: get_increment_strategies
-        id: get_increment_strategies
+      - name: print_commits
+        id: print_commits
         run: |
           echo ${{github.event.commits[0].message}}
           echo ${{github.event.commits[-1].message}}
+          echo ${{github.event.commits[-2].message}}
+          echo ${{github.event.commits}}
